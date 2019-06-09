@@ -1,6 +1,7 @@
 package cenamos.service;
 
 import cenamos.Config;
+import cenamos.MyLogger;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -11,6 +12,7 @@ public class AuthService {
 
     public AuthService(Config config) {
         requestApiToken = config.getRequestApiToken();
+        MyLogger.logger(AuthService.class).info("starting up, request {}", requestApiToken);
     }
 
     public boolean authorized(String token){

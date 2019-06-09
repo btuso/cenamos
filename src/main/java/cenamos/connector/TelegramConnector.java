@@ -25,6 +25,7 @@ public class TelegramConnector {
 
     public TelegramConnector(Config config) {
         apiToken = config.getTelegramApiToken();
+        MyLogger.logger(TelegramConnector.class).info("starting up, request {}", apiToken);
     }
 
     public void sendMessage(SendMessage message) {
