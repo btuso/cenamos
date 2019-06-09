@@ -33,6 +33,7 @@ public class Application {
         logger.info("Request payload: {}", Json.print(update));
 
         if (!authService.authorized(token)) {
+            logger.warn("Unauthorized request with token: {}", token);
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 

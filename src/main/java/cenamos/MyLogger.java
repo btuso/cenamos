@@ -38,6 +38,10 @@ public class MyLogger {
         this.logger.info(getMdcTag() + message, args);
     }
 
+    public void warn(String message, Object ...args){
+        this.logger.warn(getMdcTag() + message, args);
+    }
+
     public void error(String message, Object... args) {
         this.logger.error(getMdcTag() + message, args);
     }
